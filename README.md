@@ -1,18 +1,58 @@
-## Proyecto base TypeScript
+/*@startuml
+class mensaje{}
 
-### Requisitos
-1. Entorno de [Node.js](https://nodejs.org/en "Node.js") instalado
-2. Gestor de Dependencias [NPM](https://www.npmjs.com/ "NPM") instalado
-3. Algún IDE para editar el código. Recomendado: [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code") o [WebStorm](https://www.jetbrains.com/es-es/webstorm/ "WebStorm")
+class Perfil{
+private nombre:string;
+private descripcion: string;
+private foto: string;
+private dominio: Dominio
+private tipoPerfil: TipoPerfil;
+private coleccionDeRTA: rta[];
 
-### Ejecución
-1. Clonar el repositorio
-2. Situados en la raíz del proyecto, instalar todas las dependencias: `npm install`
-3. Ejecutar el index: `npm start` Si no se cambia el código inicial, se deberá ver un "Hola TS!" por la consola
-4. Ejecutar los tests: `npm test` 
+}
 
-### ¿Dónde escribo mi código?
-El proyecto está inspirado según el orden que plantea Maven, gestor de Dependencias para Java:
-- Todo la lógica de negocio/dominio debe escribirse dentro de la carpeta `src/main`. Se sugiere crear subcarpetas dentro de la mencionada anteriormente para una mayor prolijidad.
-- Todos los tests deben escribirse dentro de `src/test`. Se recomienda crear un archivo por cada clase TS que se quiera testear.
-- La lógica de ejecución del componente debe escribirse en el archivo `src/index.ts`, el cual se ejecuta cuando se corre el comando `npm start`
+class Like{
+private likeador: Perfil;
+private likeado: Perfil;
+private timeStamp: Date;
+}
+
+class Match{
+private  likes: Like[];
+private timeStamp: Date;
+}
+
+
+class Dominio{
+private nombre:string;
+private tipoVinculacion: TipoVinculaciones;
+private cantParticipantes: number;
+private tiposPerfiles: TipoPerfil [];
+private camposVariables: CampoVariable[];
+}
+
+class TipoPerfil{
+private nombre: string
+}
+
+
+class CampoVariable{
+private nombre: string;
+private posiblesValores: PosibleValor[];
+private campoObligatorio: boolean
+}
+
+class PosibleValor{
+private descripcion:string;
+}
+
+class rta{
+private campoVariable: CampoVariable;
+private posibleValor: PosibleValor;
+}
+
+enum TipoVinculaciones{
+SIMPLE,
+MULTIPLE;
+}
+@enduml*/
